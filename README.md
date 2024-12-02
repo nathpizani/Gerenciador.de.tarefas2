@@ -53,6 +53,12 @@ Preparar o app para ser lançado.
 Disponibilizar o app para download.
 Coletar opiniões dos usuários para futuras melhorias.
 
+DIFICULDADES
+----------
+Realizar esse trabalho foi muito difícil. Teve dedicação e muita força de vontade para consegui-lo realizado. Demorei semanas para conseguir só transportar do VS Code para o GitHub. Por se tratar de um aplicativo que tem várias versões, a versão que o professor ensinou eu não conseguia executá-la. Então eu tive que procurar vários arquivos e muitos vídeos na internet para conseguir entender o que não estava dando certo. T Mexer no GitHub foi um desafio porque eu nunca tinha visto ele na vida. Então algumas coisas eu tive que ir aprendendo enquanto fui mexendo tive muita dificuldade para realizado, mas após semanas e muitos vídeos assistindo eu consegui conclui-lo.
+
+
+
 
 
 
