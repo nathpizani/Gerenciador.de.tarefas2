@@ -1,0 +1,74 @@
+class Task:
+    def __init__(self, title, description, deadline):
+        self.title = title
+        self.description = description
+        self.deadline = deadline
+        self.status = 'Pendente'
+
+    def edit(self, title=None, description=None, deadline=None, status=None):
+        if title:
+            self.title = title
+        if description:
+            self.description = description
+        if deadline:
+            self.deadline = deadline
+        if status:
+            self.status = status
+
+    def __str__(self):
+        return f"""
+        {'-'*40}
+        Título:       {self.title}
+        Descrição:    {self.description}
+        Prazo:        {self.deadline}
+        Status:       {self.status}
+        {'-'*40}
+        """
+
+
+class TaskManager:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self):
+        print("\n--- Adicionar Tarefa ---")
+        title = input("Título da tarefa: ")
+        description = input("Descrição da tarefa: ")
+        deadline = input("Prazo da tarefa (formato: dd/mm/aaaa): ")
+        task = Task(title, description, deadline)
+        self.tasks.append(task)
+        print("\nTarefa adicionada com sucesso!\n")
+
+    def list_tasks(self):
+        if not self.tasks:
+            print("\nNenhuma tarefa encontrada!\n")
+        else:
+            print("\n--- Tarefas Cadastradas ---")
+            for idx, task in enumerate(self.tasks, 1):
+                print(f"Tarefa {idx}:")
+                print(task)
+
+    def edit_task(self):
+        self.list_tasks()
+        try:
+            task_id = int(input("Digite o número da tarefa a ser editada: ")) - 1
+            if 0 <= task_id < len(self.tasks):
+                print("\nDigite os novos dados (pressione Enter para manter o valor atual):")
+                title = input(f"Título atual: {self.tasks[task_id].title} / Novo título: ")
+                description = input(f"Descrição atual: {self.tasks[task_id].description} / Nova descrição: ")
+                deadline = input(f"Prazo atual: {self.tasks[task_id].deadline} / Novo prazo: ")
+                status = input(f"Status atual: {self.tasks[task_id].status} / Novo status: ")
+                
+                self.tasks[task_id].edit(
+                    title if title else None,
+                    description if description else None,
+                    deadline if deadline else None,
+                    status if status else None
+                )
+                print("\nTarefa editada com sucesso!\n")
+            else:
+                print("\nTarefa não encontrada!\n")
+        except ValueError:
+            print("\nEntrada inválida. Tente novamente.\n")
+
+    def delete_tas
